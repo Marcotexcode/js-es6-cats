@@ -38,11 +38,11 @@ const gatti = [
 
     {nome: 'Micio', eta: 12,  colore: '#FFFF00',  sesso: 'M'},
 
-    {nome: 'Luna', eta: 2,  colore: '#7CFC00',  sesso: 'M'},
+    {nome: 'Chicco', eta: 1.5,  colore: '#7CFC00',  sesso: 'M'},
 
-    {nome: 'Chicco', eta: 15,  colore: '#ADD8E6',  sesso: 'F'},
+    {nome: 'Luna', eta: 9,  colore: '#ADD8E6',  sesso: 'F'},
 
-    {nome: 'Leo', eta: 10,  colore: '#800000',  sesso: 'M'}
+    {nome: 'Leo', eta: 1,  colore: '#800000',  sesso: 'M'}
 
 ];
 
@@ -52,13 +52,18 @@ const gatti = [
 
 gatti.forEach((element) => {
 
-    if (element.eta < 10) {
-
-        console.log('Nome: ' + element.nome + '   ' + 'Colore: ' + element.colore);
-
-    }
-
+    document.getElementById('container').innerHTML += 
+    
+    `
+        ${element.nome} <i class='fas fa-cat' style='color: ${element.colore}'></i>,
+    
+    `
 });
+
+
+
+
+
 
 
 
@@ -66,25 +71,51 @@ gatti.forEach((element) => {
 
 
 
-// DIVIDERE I GATTINI IN DUE CONTENITORI IN BASE AL SESSO E AGGIUNGERE A OGNIUNO UN FIOCCO O BLU O ROSA IN BASE AL SESSO
+// DIVIDERE I GATTINI IN DUE CONTENITORI IN BASE AL SESSO  
 
 const gattiM = [];
 
 const gattiF = [];
 
+// E AGGIUNGERE A OGNIUNO UN FIOCCO DI FIANCO A ONGI GATTTINO M O F
 
-gatti.forEach((element) => {
+const rosa = '#EEA783';
 
-    if (element.sesso === 'M') {
+const blu = '211CBB';
 
-        gattiM.push(element);
 
-    } else if (element.sesso === 'F') {
+const newCats = gatti.map((element) => {
 
-        gattiF.push(element);
+    const [nome, eta, colore, sesso] = gatti;
+    
+    const nome = element.name;
+
+    const eta = element.name;
+
+    const colore = elemetn.colore;
+
+    const sesso = element.sesso;
+
+
+
+    return {
+        nome, 
+        eta,
+        colore, 
+        sesso,
+        fiocco : {colore: (eta === 'F') ? rosa : blu}
     }
+
 });
 
-console.log(gattiM);
-console.log(gattiF);
+
+
+
+
+
+
+
+
+
+
 
