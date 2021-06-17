@@ -164,7 +164,41 @@ gattiF.forEach((element) => {
 
 
 
+// ******************************************  Milestone 3  ****************************************** //
+
+
 
 // Creare un nuovo array con prima tutti i gattini femmina
+
+
 // e poi tutti i gattini maschio, 
+
+let gattiFm = [...gattiF, ...gattiM];
 // inserendo solamente nome, colore e opacità del fiocco per ogni gatto.
+const gattiFmZip = gattiFm.map((element) => {
+    
+    const {nome, colore, fiocco} = element;
+     
+    return {
+
+        nome,
+        colore,
+        fiocco
+
+    }
+
+});
+
+document.getElementById('container').innerHTML += '<br/><br/><br/><br/><br/><br/><br/><br/> ';
+
+gattiFmZip.forEach((element) => {
+
+    document.getElementById('container').innerHTML += 
+    
+    `
+        <br/><br/>
+        ${element.nome} <i class='fas fa-cat' style='color: ${element.colore}'></i> 
+        <i class='fas fa-ribbon' style='color:${element.fiocco.colore}; opacity: ${element.fiocco.opacity};'></i>,
+    
+    `
+});
