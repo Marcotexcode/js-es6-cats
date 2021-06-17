@@ -60,6 +60,7 @@ gatti.forEach((element) => {
     `
 });
 
+document.getElementById('container').innerHTML += '<br/><br/> ';
 
 
 
@@ -189,7 +190,7 @@ const gattiFmZip = gattiFm.map((element) => {
 
 });
 
-document.getElementById('container').innerHTML += '<br/><br/><br/><br/><br/><br/><br/><br/> ';
+document.getElementById('container').innerHTML += '<br/><br/><br/><br/><br/> ';
 
 gattiFmZip.forEach((element) => {
 
