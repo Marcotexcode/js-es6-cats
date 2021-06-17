@@ -23,22 +23,26 @@
 
 
 
+// ******************************************  Milestone 1  ****************************************** //
+
+
 // DEFINIRE UN ARRAY DI OGGETTI CHE RAPPRESENTANO  I GATTI
-var gatti = [
 
-    {nome: 'Garfield', eta: 20,  colore: '	#FF1493',  sesso: 'M'},
+const gatti = [
 
-    {nome: 'Romeo', eta: 6,  colore: '	#FF8C00',  sesso: 'M'},
+    {nome: 'Garfield', eta: 20,  colore: '#FF1493',  sesso: 'M'},
 
-    {nome: 'Pallina', eta: 3,  colore: '	#FF00FF',  sesso: 'F'},
+    {nome: 'Romeo', eta: 6,  colore: '#FF8C00',  sesso: 'M'},
 
-    {nome: 'Micio', eta: 12,  colore: '	#FFFF00',  sesso: 'M'},
+    {nome: 'Pallina', eta: 3,  colore: '#FF00FF',  sesso: 'F'},
 
-    {nome: 'Luna', eta: 2,  colore: '	#7CFC00',  sesso: 'M'},
+    {nome: 'Micio', eta: 12,  colore: '#FFFF00',  sesso: 'M'},
 
-    {nome: 'Chicco', eta: 15,  colore: '	#ADD8E6',  sesso: 'F'},
+    {nome: 'Luna', eta: 2,  colore: '#7CFC00',  sesso: 'M'},
 
-    {nome: 'Leo', eta: 10,  colore: '	#800000',  sesso: 'M'}
+    {nome: 'Chicco', eta: 15,  colore: '#ADD8E6',  sesso: 'F'},
+
+    {nome: 'Leo', eta: 10,  colore: '#800000',  sesso: 'M'}
 
 ];
 
@@ -46,11 +50,41 @@ var gatti = [
 
 // TRAMITE IL FOREACH SAMPARE TUTTI I GATTINI CIASCUNO CON IL PROPRIO COLORE E NOME
 
-gatti.forEach((element, index, array) => {
+gatti.forEach((element) => {
 
     if (element.eta < 10) {
 
         console.log('Nome: ' + element.nome + '   ' + 'Colore: ' + element.colore);
+
     }
 
 });
+
+
+
+// ******************************************  Milestone 2  ****************************************** //
+
+
+
+// DIVIDERE I GATTINI IN DUE CONTENITORI IN BASE AL SESSO E AGGIUNGERE A OGNIUNO UN FIOCCO O BLU O ROSA IN BASE AL SESSO
+
+const gattiM = [];
+
+const gattiF = [];
+
+
+gatti.forEach((element) => {
+
+    if (element.sesso === 'M') {
+
+        gattiM.push(element);
+
+    } else if (element.sesso === 'F') {
+
+        gattiF.push(element);
+    }
+});
+
+console.log(gattiM);
+console.log(gattiF);
+
