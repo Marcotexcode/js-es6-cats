@@ -30,13 +30,13 @@
 
 const gatti = [
 
-    {nome: 'Garfield', eta: 20,  colore: '#FF1493',  sesso: 'M'},
+    {nome: 'Garfield', eta: 7,  colore: '#FF1493',  sesso: 'M'},
 
     {nome: 'Romeo', eta: 6,  colore: '#FF8C00',  sesso: 'M'},
 
     {nome: 'Pallina', eta: 3,  colore: '#FF00FF',  sesso: 'F'},
 
-    {nome: 'Micio', eta: 12,  colore: '#FFFF00',  sesso: 'M'},
+    {nome: 'Micio', eta: 8,  colore: '#FFFF00',  sesso: 'M'},
 
     {nome: 'Chicco', eta: 1.5,  colore: '#7CFC00',  sesso: 'M'},
 
@@ -79,41 +79,90 @@ const gattiF = [];
 
 // E AGGIUNGERE A OGNIUNO UN FIOCCO DI FIANCO A ONGI GATTTINO M O F
 
-const rosa = '#EEA783';
+const rosa = '#EEA7B3';
 
-const blu = '211CBB';
+const blu = '#211CBB';
 
+// IL COLORE DEVE ESSERE PIU TENUE SE IL GATTO E PIU GIOVANE, PIU SCURO SE IL GATTO E PIU VECCHIO
+
+//partire mettendo il fiocco a tutti creando un nuovo array di gatti usando il (map)
 
 const newCats = gatti.map((element) => {
 
-    const [nome, eta, colore, sesso] = gatti;
-    
-    const nome = element.name;
+    const {nome, eta, colore, sesso} = element;
 
-    const eta = element.name;
-
-    const colore = elemetn.colore;
-
-    const sesso = element.sesso;
-
-
+    const opacity = element.eta / 9;
 
     return {
         nome, 
         eta,
         colore, 
         sesso,
-        fiocco : {colore: (eta === 'F') ? rosa : blu}
+        fiocco : {colore: (eta === 'F') ? rosa : blu, opacity : opacity}
     }
 
 });
 
 
 
+newCats.forEach((element) => {
+
+    document.getElementById('container').innerHTML += 
+    
+    `
+        <br/><br/>
+        ${element.nome} <i class='fas fa-cat' style='color: ${element.colore}'></i> 
+        <i class='fas fa-ribbon' style='color:${element.fiocco.colore}; opacity: ${element.fiocco.opacity};'></i>,
+    
+    `
+});
+
+
+
+// DIVIDERE I GATTI IN DUE CONTENITORI DISTINTI 
+
+// const gattiM = newCats.filter((element) => {
+
+//     return element.sesso === 'M';
+
+// });
+
+// document.getElementById('container').innerHTML += 'Maschi';
+
+// gattiM.forEach((element) => {
+
+//     document.getElementById('container').innerHTML += 
+    
+//     `
+//         <br/><br/>
+//         ${element.nome} <i class='fas fa-cat' style='color: ${element.colore}'></i> 
+//         <i class='fas fa-ribbon' style='color:${element.fiocco.colore}; opacity: ${element.fiocco.opacity};'></i>,
+    
+//     `;
+// });
 
 
 
 
+// const gattiF = newCats.filter((element) => {
+
+//     return element.sesso === 'F';
+
+// });
+
+// document.getElementById('container').innerHTML += 'Femmine';
+
+// gattiF.forEach((element) => {
+
+//     document.getElementById('container').innerHTML += 
+    
+//     `
+//         <br/><br/>
+//         ${element.nome} <i class='fas fa-cat' style='color: ${element.colore}'></i> 
+//         <i class='fas fa-ribbon' style='color:${element.fiocco.colore}; opacity: ${element.fiocco.opacity};'></i>,
+    
+//     `
+// });
 
 
 
