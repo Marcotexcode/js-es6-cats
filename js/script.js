@@ -71,11 +71,8 @@ gatti.forEach((element) => {
 
 
 
-// DIVIDERE I GATTINI IN DUE CONTENITORI IN BASE AL SESSO  
 
-const gattiM = [];
 
-const gattiF = [];
 
 // E AGGIUNGERE A OGNIUNO UN FIOCCO DI FIANCO A ONGI GATTTINO M O F
 
@@ -121,50 +118,53 @@ newCats.forEach((element) => {
 
 // DIVIDERE I GATTI IN DUE CONTENITORI DISTINTI 
 
-// const gattiM = newCats.filter((element) => {
+const gattiM = newCats.filter((element) => {
 
-//     return element.sesso === 'M';
+    return element.sesso === 'M';
 
-// });
+});
 
-// document.getElementById('container').innerHTML += 'Maschi';
+document.getElementById('container').innerHTML += '<br/><br/><br/><br/> **** MASCHI ****';
 
-// gattiM.forEach((element) => {
+gattiM.forEach((element) => {
 
-//     document.getElementById('container').innerHTML += 
+    document.getElementById('container').innerHTML += 
     
-//     `
-//         <br/><br/>
-//         ${element.nome} <i class='fas fa-cat' style='color: ${element.colore}'></i> 
-//         <i class='fas fa-ribbon' style='color:${element.fiocco.colore}; opacity: ${element.fiocco.opacity};'></i>,
+    `
+        <br/><br/>
+        ${element.nome} <i class='fas fa-cat' style='color: ${element.colore}'></i> 
+        <i class='fas fa-ribbon' style='color:${element.fiocco.colore}; opacity: ${element.fiocco.opacity};'></i>,
     
-//     `;
-// });
+    `;
+});
 
 
 
 
-// const gattiF = newCats.filter((element) => {
+const gattiF = newCats.filter((element) => {
 
-//     return element.sesso === 'F';
+    return element.sesso === 'F';
 
-// });
+});
 
-// document.getElementById('container').innerHTML += 'Femmine';
+document.getElementById('container').innerHTML += '<br/><br/><br/><br/> **** FEMMINE ****';
 
-// gattiF.forEach((element) => {
+gattiF.forEach((element) => {
 
-//     document.getElementById('container').innerHTML += 
+    document.getElementById('container').innerHTML += 
     
-//     `
-//         <br/><br/>
-//         ${element.nome} <i class='fas fa-cat' style='color: ${element.colore}'></i> 
-//         <i class='fas fa-ribbon' style='color:${element.fiocco.colore}; opacity: ${element.fiocco.opacity};'></i>,
+    `
+        <br/><br/>
+        ${element.nome} <i class='fas fa-cat' style='color: ${element.colore}'></i> 
+        <i class='fas fa-ribbon' style='color:${element.fiocco.colore}; opacity: ${element.fiocco.opacity};'></i>,
     
-//     `
-// });
+    `
+});
 
 
 
 
 
+// Creare un nuovo array con prima tutti i gattini femmina
+// e poi tutti i gattini maschio, 
+// inserendo solamente nome, colore e opacità del fiocco per ogni gatto.
